@@ -23,8 +23,8 @@ const Header = () => {
       href: "#programs",
       hasDropdown: true,
       dropdownItems: [
-        { name: "Strategy Execution Lab", href: "#execution-lab", badge: "For Organizations" },
-        { name: "Strategic Thinking Lab", href: "#thinking-lab", badge: "For Individuals" },
+        { name: "Strategy Execution Lab", href: "/programs/strategy-execution-lab", badge: "For Organizations" },
+        { name: "Strategic Thinking Lab", href: "/programs/strategic-thinking-lab", badge: "For Individuals" },
       ]
     },
     { name: "For Organizations", href: "#organizations" },
@@ -93,9 +93,9 @@ const Header = () => {
                   >
                     <div className="bg-background border border-border shadow-elegant p-4 min-w-[280px]">
                       {link.dropdownItems?.map((item) => (
-                        <a
+                        <Link
                           key={item.name}
-                          href={item.href}
+                          to={item.href}
                           className="block p-3 hover:bg-muted transition-colors group/item"
                         >
                           <span className="text-xs uppercase tracking-wider text-primary font-medium">
@@ -104,7 +104,7 @@ const Header = () => {
                           <span className="block text-base font-medium text-foreground group-hover/item:text-primary transition-colors mt-1">
                             {item.name}
                           </span>
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>
