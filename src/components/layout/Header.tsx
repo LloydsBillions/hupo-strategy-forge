@@ -151,14 +151,14 @@ const Header = () => {
                 {link.hasDropdown && link.dropdownItems && (
                   <div className="mt-3 ml-4 flex flex-col gap-2">
                     {link.dropdownItems.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
-                        href={item.href}
+                        to={item.href}
                         className="text-muted-foreground hover:text-primary transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}
