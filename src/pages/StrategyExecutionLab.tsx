@@ -1,0 +1,29 @@
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import SELHeroSection from "@/components/strategy-execution-lab/SELHeroSection";
+import SELChallengeSection from "@/components/strategy-execution-lab/SELChallengeSection";
+import SELPhasesSection from "@/components/strategy-execution-lab/SELPhasesSection";
+import SELCurriculumSection from "@/components/strategy-execution-lab/SELCurriculumSection";
+import SELInvestmentSection from "@/components/strategy-execution-lab/SELInvestmentSection";
+import SELCaseStudiesSection from "@/components/strategy-execution-lab/SELCaseStudiesSection";
+import SELFinalCTASection from "@/components/strategy-execution-lab/SELFinalCTASection";
+
+const StrategyExecutionLab = () => {
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <SELHeroSection />
+        <SELChallengeSection />
+        <SELPhasesSection />
+        <SELCurriculumSection />
+        <SELInvestmentSection />
+        <SELCaseStudiesSection />
+        <SELFinalCTASection />
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default StrategyExecutionLab;
