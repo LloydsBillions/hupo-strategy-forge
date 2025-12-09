@@ -27,11 +27,11 @@ const Header = () => {
         { name: "Strategic Thinking Lab", href: "/programs/strategic-thinking-lab", badge: "For Individuals" },
       ]
     },
-    { name: "For Organizations", href: "#organizations" },
+    { name: "For Organizations", href: "/programs/strategy-execution-lab" },
     { name: "Approach", href: "#approach" },
     { name: "Impact", href: "#impact" },
     { name: "Resources", href: "#resources" },
-    { name: "About", href: "#about" },
+    { name: "About", href: "/about" },
   ];
 
   return (
@@ -73,6 +73,13 @@ const Header = () => {
                     {link.name}
                     <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
                   </button>
+                ) : link.href.startsWith('/') ? (
+                  <Link
+                    to={link.href}
+                    className="text-sm font-medium uppercase tracking-wider text-foreground/80 hover:text-primary transition-colors gold-underline"
+                  >
+                    {link.name}
+                  </Link>
                 ) : (
                   <a
                     href={link.href}
@@ -141,13 +148,23 @@ const Header = () => {
           <div className="flex flex-col gap-6">
             {navLinks.map((link) => (
               <div key={link.name}>
-                <a
-                  href={link.href}
-                  className="text-2xl font-display font-bold text-foreground hover:text-primary transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
+                {link.href.startsWith('/') ? (
+                  <Link
+                    to={link.href}
+                    className="text-2xl font-display font-bold text-foreground hover:text-primary transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <a
+                    href={link.href}
+                    className="text-2xl font-display font-bold text-foreground hover:text-primary transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </a>
+                )}
                 {link.hasDropdown && link.dropdownItems && (
                   <div className="mt-3 ml-4 flex flex-col gap-2">
                     {link.dropdownItems.map((item) => (
