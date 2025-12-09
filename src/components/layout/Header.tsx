@@ -122,8 +122,8 @@ const Header = () => {
 
           {/* CTA + Mobile Menu */}
           <div className="flex items-center gap-4">
-            <Button variant="hero" size="default" className="hidden md:inline-flex">
-              Apply Now
+            <Button asChild variant="hero" size="default" className="hidden md:inline-flex">
+              <Link to="/apply">Apply Now</Link>
             </Button>
             
             <button
