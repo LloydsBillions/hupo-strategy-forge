@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import StrategyExecutionLab from "./pages/StrategyExecutionLab";
 import StrategicThinkingLab from "./pages/StrategicThinkingLab";
 import About from "./pages/About";
+import Apply from "./pages/Apply";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/programs/strategy-execution-lab" element={<StrategyExecutionLab />} />
           <Route path="/programs/strategic-thinking-lab" element={<StrategicThinkingLab />} />
           <Route path="/about" element={<About />} />
+          <Route path="/apply" element={<Apply />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
