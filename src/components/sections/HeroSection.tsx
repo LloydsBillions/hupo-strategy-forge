@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { ArrowDown, ChevronRight } from "lucide-react";
+import { ChevronRight, MousePointer2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import LogoMarquee from "@/components/ui/LogoMarquee";
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -80,28 +81,27 @@ const HeroSection = () => {
             </Button>
           </div>
 
-          {/* Trust Indicators */}
+          {/* Trust Indicators - Logo Marquee */}
           <div 
-            className={`flex flex-wrap justify-center items-center gap-8 text-steel text-sm transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             style={{ transitionDelay: '700ms' }}
           >
-            <span className="uppercase tracking-wider">Trusted by leaders at</span>
-            <div className="flex items-center gap-6">
-              <span className="font-bold text-white/60">GTBank</span>
-              <span className="font-bold text-white/60">Dangote</span>
-              <span className="font-bold text-white/60">Flutterwave</span>
-            </div>
+            <LogoMarquee />
           </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - Responsive & Animated */}
       <div 
-        className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-steel transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+        className={`absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-steel transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
         style={{ transitionDelay: '900ms' }}
       >
-        <span className="text-xs uppercase tracking-wider">Scroll to Discover</span>
-        <ArrowDown className="w-5 h-5 animate-pulse-subtle" />
+        <span className="text-[10px] sm:text-xs uppercase tracking-wider hidden sm:block">
+          Scroll to Discover
+        </span>
+        <div className="animate-bounce-gentle">
+          <MousePointer2 className="w-4 h-4 sm:w-5 sm:h-5 rotate-180" />
+        </div>
       </div>
     </section>
   );
