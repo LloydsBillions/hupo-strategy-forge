@@ -8,6 +8,8 @@ import StrategyExecutionLab from "./pages/StrategyExecutionLab";
 import StrategicThinkingLab from "./pages/StrategicThinkingLab";
 import About from "./pages/About";
 import Apply from "./pages/Apply";
+import Approach from "./pages/Approach";
+import Programs from "./pages/Programs";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,8 +22,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/programs" element={<Programs />} />
           <Route path="/programs/strategy-execution-lab" element={<StrategyExecutionLab />} />
           <Route path="/programs/strategic-thinking-lab" element={<StrategicThinkingLab />} />
+          <Route path="/approach" element={<Approach />} />
           <Route path="/about" element={<About />} />
           <Route path="/apply" element={<Apply />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

@@ -20,17 +20,16 @@ const Header = () => {
   const navLinks = [
     { 
       name: "Programs", 
-      href: "#programs",
+      href: "/programs",
       hasDropdown: true,
       dropdownItems: [
         { name: "Strategy Execution Lab", href: "/programs/strategy-execution-lab", badge: "For Organizations" },
         { name: "Strategic Thinking Lab", href: "/programs/strategic-thinking-lab", badge: "For Individuals" },
+        { name: "Compare Programs", href: "/programs", badge: "Overview" },
       ]
     },
     { name: "For Organizations", href: "/programs/strategy-execution-lab" },
-    { name: "Approach", href: "#approach" },
-    { name: "Impact", href: "#impact" },
-    { name: "Resources", href: "#resources" },
+    { name: "Approach", href: "/approach" },
     { name: "About", href: "/about" },
   ];
 
