@@ -30,6 +30,8 @@ const Header = () => {
     },
     { name: "For Organizations", href: "/programs/strategy-execution-lab" },
     { name: "Approach", href: "/approach" },
+    { name: "Impact", href: "/impact" },
+    { name: "Resources", href: "/resources" },
     { name: "About", href: "/about" },
   ];
 
