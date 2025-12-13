@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Twitter, Instagram, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import hupoLogo from "@/assets/hupo-logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -37,9 +38,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-display font-black text-xl">H</span>
-              </div>
+              <img src={hupoLogo} alt="Hupo School of Strategy" className="w-10 h-10 object-contain" />
               <div>
                 <span className="font-display text-xl font-bold tracking-tight text-white">
                   HUPO

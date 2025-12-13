@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import hupoLogo from "@/assets/hupo-logo.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,9 +49,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-20 lg:h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-display font-black text-xl">H</span>
-            </div>
+            <img src={hupoLogo} alt="Hupo School of Strategy" className="w-10 h-10 object-contain" />
             <div className="hidden sm:block">
               <span className="font-display text-xl font-bold tracking-tight text-foreground">
                 HUPO
