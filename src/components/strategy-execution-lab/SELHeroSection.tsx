@@ -48,17 +48,18 @@ const SELHeroSection = () => {
 
           {/* Headline */}
           <h1 className={cn(
-            "text-display-xl md:text-[5rem] lg:text-[6rem] font-display font-black text-white leading-none mb-6 opacity-0",
+            "text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[5rem] font-display font-black text-white leading-none mb-6 opacity-0",
             isInView && "animate-fade-up stagger-2"
           )}>
             Strategy
-            <br />
+            <br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>
             <span className="text-primary">Execution Lab</span>
           </h1>
 
           {/* Subheadline */}
           <p className={cn(
-            "text-2xl md:text-3xl text-white/80 font-display mb-6 opacity-0",
+            "text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/80 font-display mb-6 opacity-0",
             isInView && "animate-fade-up stagger-3"
           )}>
             Where leadership teams learn to turn strategy into consistent, measurable results

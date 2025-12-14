@@ -42,7 +42,7 @@ export const STLHeroSection = () => {
 
             {/* Headline */}
             <h1 className={cn(
-              "text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground leading-tight opacity-0",
+              "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground leading-tight opacity-0",
               isInView && "animate-fade-up stagger-2"
             )}>
               Strategic Thinking Lab
