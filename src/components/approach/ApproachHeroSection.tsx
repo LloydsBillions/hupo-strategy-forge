@@ -18,8 +18,10 @@ const ApproachHeroSection = () => {
         <span className="inline-block text-gold font-sans text-sm tracking-[0.2em] uppercase mb-6">
           Our Methodology
         </span>
-        <h1 className="font-display text-5xl md:text-7xl text-white mb-8 tracking-tight">
-          The Hupo<br />
+        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-8 tracking-tight">
+          The Hupo
+          <br className="hidden sm:block" />
+          <span className="sm:hidden"> </span>
           <span className="text-gold">Approach</span>
         </h1>
         <p className="text-warm-stone text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">

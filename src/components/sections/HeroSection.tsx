@@ -42,11 +42,12 @@ const HeroSection = () => {
 
           {/* Main Headline */}
           <h1 
-            className={`font-display text-4xl sm:text-5xl md:text-6xl lg:text-display-xl font-black text-white leading-none mb-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            className={`font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-display-xl font-black text-white leading-none mb-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             style={{ transitionDelay: '200ms' }}
           >
             WHERE STRATEGIC
-            <br />
+            <br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>
             <span className="text-primary">LEADERS ARE FORGED</span>
           </h1>
 

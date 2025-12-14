@@ -37,11 +37,12 @@ const ImpactHeroSection = () => {
 
           {/* Headline */}
           <h1 className={cn(
-            "text-display-lg md:text-display-xl font-display font-black text-white leading-none mb-6 opacity-0",
+            "text-3xl sm:text-4xl md:text-5xl lg:text-display-lg xl:text-display-xl font-display font-black text-white leading-none mb-6 opacity-0",
             isInView && "animate-fade-up stagger-2"
           )}>
             Measurable
-            <br />
+            <br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>
             <span className="text-primary">Impact</span>
           </h1>
 
