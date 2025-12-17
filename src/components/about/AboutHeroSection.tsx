@@ -15,7 +15,7 @@ const AboutHeroSection = () => {
           <p className="text-primary font-medium tracking-widest uppercase text-sm mb-6">
             Our Story
           </p>
-          <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-8 leading-tight">
+          <h1 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mb-8 leading-tight break-words">
             Building Africa's Premier Sanctuary
             <br className="hidden sm:block" />
             <span className="sm:hidden"> </span>

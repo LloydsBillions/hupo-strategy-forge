@@ -42,7 +42,7 @@ const HeroSection = () => {
 
           {/* Main Headline */}
           <h1 
-            className={`font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-display-xl font-black text-white leading-none mb-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            className={`font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-display-xl font-black text-white leading-none mb-8 break-words transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             style={{ transitionDelay: '200ms' }}
           >
             WHERE STRATEGIC

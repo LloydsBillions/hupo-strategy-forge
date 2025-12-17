@@ -18,7 +18,7 @@ const ProgramsHeroSection = () => {
         <span className="inline-block text-gold font-sans text-sm tracking-[0.2em] uppercase mb-6">
           Our Programs
         </span>
-        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-8 tracking-tight">
+        <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white mb-8 tracking-tight break-words">
           Choose Your Path to
           <br className="hidden sm:block" />
           <span className="sm:hidden"> </span>
