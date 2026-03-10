@@ -66,7 +66,7 @@ const Header = () => {
               <div key={link.name} className="relative group">
                 {link.hasDropdown ? (
                   <button
-                    className="flex items-center gap-1 text-sm font-medium uppercase tracking-wider text-foreground/80 hover:text-primary transition-colors"
+                    className={cn("flex items-center gap-1 text-sm font-medium uppercase tracking-wider hover:text-primary transition-colors", isScrolled ? "text-foreground/80" : "text-white/90")}
                     onMouseEnter={() => setIsProgramsOpen(true)}
                     onMouseLeave={() => setIsProgramsOpen(false)}
                   >
@@ -76,14 +76,14 @@ const Header = () => {
                 ) : link.href.startsWith('/') ? (
                   <Link
                     to={link.href}
-                    className="text-sm font-medium uppercase tracking-wider text-foreground/80 hover:text-primary transition-colors gold-underline"
+                    className={cn("text-sm font-medium uppercase tracking-wider hover:text-primary transition-colors gold-underline", isScrolled ? "text-foreground/80" : "text-white/90")}
                   >
                     {link.name}
                   </Link>
                 ) : (
                   <a
                     href={link.href}
-                    className="text-sm font-medium uppercase tracking-wider text-foreground/80 hover:text-primary transition-colors gold-underline"
+                    className={cn("text-sm font-medium uppercase tracking-wider hover:text-primary transition-colors gold-underline", isScrolled ? "text-foreground/80" : "text-white/90")}
                   >
                     {link.name}
                   </a>
