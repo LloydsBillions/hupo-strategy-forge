@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -9,6 +9,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProgramsOpen, setIsProgramsOpen] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,9 +19,18 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const lightHeroRoutes = [
+    "/about",
+    "/programs/strategic-thinking-lab",
+    "/programs/strategy-execution-lab",
+  ];
+
+  const hasLightHero = lightHeroRoutes.some((route) => pathname.startsWith(route));
+  const useDarkHeaderText = isScrolled || hasLightHero;
+
   const navLinks = [
-    { 
-      name: "Programs", 
+    {
+      name: "Programs",
       href: "/programs",
       hasDropdown: true,
       dropdownItems: [
@@ -51,10 +61,10 @@ const Header = () => {
           <Link to="/" className="flex items-center gap-3 group">
             <img src={hupoLogo} alt="Hupo School of Strategy" className="w-10 h-10 object-contain" />
             <div className="hidden sm:block">
-              <span className={cn("font-display text-xl font-bold tracking-tight", isScrolled ? "text-foreground" : "text-white")}>
+              <span className={cn("font-display text-xl font-bold tracking-tight", useDarkHeaderText ? "text-foreground" : "text-white")}>
                 HUPO
               </span>
-              <span className={cn("block text-[10px] uppercase tracking-[0.2em] -mt-1", isScrolled ? "text-muted-foreground" : "text-white/60")}>
+              <span className={cn("block text-[10px] uppercase tracking-[0.2em] -mt-1", useDarkHeaderText ? "text-muted-foreground" : "text-white/60")}>
                 School of Strategy
               </span>
             </div>
@@ -66,7 +76,7 @@ const Header = () => {
               <div key={link.name} className="relative group">
                 {link.hasDropdown ? (
                   <button
-                    className={cn("flex items-center gap-1 text-sm font-medium uppercase tracking-wider hover:text-primary transition-colors", isScrolled ? "text-foreground/80" : "text-white/90")}
+                    className={cn("flex items-center gap-1 text-sm font-medium uppercase tracking-wider hover:text-primary transition-colors", useDarkHeaderText ? "text-foreground/80" : "text-white/90")}
                     onMouseEnter={() => setIsProgramsOpen(true)}
                     onMouseLeave={() => setIsProgramsOpen(false)}
                   >
@@ -76,14 +86,14 @@ const Header = () => {
                 ) : link.href.startsWith('/') ? (
                   <Link
                     to={link.href}
-                    className={cn("text-sm font-medium uppercase tracking-wider hover:text-primary transition-colors gold-underline", isScrolled ? "text-foreground/80" : "text-white/90")}
+                    className={cn("text-sm font-medium uppercase tracking-wider hover:text-primary transition-colors gold-underline", useDarkHeaderText ? "text-foreground/80" : "text-white/90")}
                   >
                     {link.name}
                   </Link>
                 ) : (
                   <a
                     href={link.href}
-                    className={cn("text-sm font-medium uppercase tracking-wider hover:text-primary transition-colors gold-underline", isScrolled ? "text-foreground/80" : "text-white/90")}
+                    className={cn("text-sm font-medium uppercase tracking-wider hover:text-primary transition-colors gold-underline", useDarkHeaderText ? "text-foreground/80" : "text-white/90")}
                   >
                     {link.name}
                   </a>
@@ -125,9 +135,9 @@ const Header = () => {
             <Button asChild variant="hero" size="default" className="hidden md:inline-flex">
               <Link to="/apply">Apply Now</Link>
             </Button>
-            
+
             <button
-              className={cn("lg:hidden p-2", isScrolled ? "text-foreground" : "text-white")}
+              className={cn("lg:hidden p-2", useDarkHeaderText ? "text-foreground" : "text-white")}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -194,3 +204,4 @@ const Header = () => {
 };
 
 export default Header;
+
