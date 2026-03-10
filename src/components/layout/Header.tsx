@@ -127,7 +127,7 @@ const Header = () => {
             </Button>
             
             <button
-              className="lg:hidden p-2 text-foreground"
+              className={cn("lg:hidden p-2", isScrolled ? "text-foreground" : "text-white")}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
