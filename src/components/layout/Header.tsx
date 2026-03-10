@@ -51,10 +51,10 @@ const Header = () => {
           <Link to="/" className="flex items-center gap-3 group">
             <img src={hupoLogo} alt="Hupo School of Strategy" className="w-10 h-10 object-contain" />
             <div className="hidden sm:block">
-              <span className="font-display text-xl font-bold tracking-tight text-foreground">
+              <span className={cn("font-display text-xl font-bold tracking-tight", isScrolled ? "text-foreground" : "text-white")}>
                 HUPO
               </span>
-              <span className="block text-[10px] uppercase tracking-[0.2em] text-muted-foreground -mt-1">
+              <span className={cn("block text-[10px] uppercase tracking-[0.2em] -mt-1", isScrolled ? "text-muted-foreground" : "text-white/60")}>
                 School of Strategy
               </span>
             </div>
@@ -66,7 +66,7 @@ const Header = () => {
               <div key={link.name} className="relative group">
                 {link.hasDropdown ? (
                   <button
-                    className="flex items-center gap-1 text-sm font-medium uppercase tracking-wider text-foreground/80 hover:text-primary transition-colors"
+                    className={cn("flex items-center gap-1 text-sm font-medium uppercase tracking-wider hover:text-primary transition-colors", isScrolled ? "text-foreground/80" : "text-white/90")}
                     onMouseEnter={() => setIsProgramsOpen(true)}
                     onMouseLeave={() => setIsProgramsOpen(false)}
                   >
@@ -76,14 +76,14 @@ const Header = () => {
                 ) : link.href.startsWith('/') ? (
                   <Link
                     to={link.href}
-                    className="text-sm font-medium uppercase tracking-wider text-foreground/80 hover:text-primary transition-colors gold-underline"
+                    className={cn("text-sm font-medium uppercase tracking-wider hover:text-primary transition-colors gold-underline", isScrolled ? "text-foreground/80" : "text-white/90")}
                   >
                     {link.name}
                   </Link>
                 ) : (
                   <a
                     href={link.href}
-                    className="text-sm font-medium uppercase tracking-wider text-foreground/80 hover:text-primary transition-colors gold-underline"
+                    className={cn("text-sm font-medium uppercase tracking-wider hover:text-primary transition-colors gold-underline", isScrolled ? "text-foreground/80" : "text-white/90")}
                   >
                     {link.name}
                   </a>
@@ -127,7 +127,7 @@ const Header = () => {
             </Button>
             
             <button
-              className="lg:hidden p-2 text-foreground"
+              className={cn("lg:hidden p-2", isScrolled ? "text-foreground" : "text-white")}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
