@@ -51,10 +51,10 @@ const Header = () => {
           <Link to="/" className="flex items-center gap-3 group">
             <img src={hupoLogo} alt="Hupo School of Strategy" className="w-10 h-10 object-contain" />
             <div className="hidden sm:block">
-              <span className="font-display text-xl font-bold tracking-tight text-foreground">
+              <span className={cn("font-display text-xl font-bold tracking-tight", isScrolled ? "text-foreground" : "text-white")}>
                 HUPO
               </span>
-              <span className="block text-[10px] uppercase tracking-[0.2em] text-muted-foreground -mt-1">
+              <span className={cn("block text-[10px] uppercase tracking-[0.2em] -mt-1", isScrolled ? "text-muted-foreground" : "text-white/60")}>
                 School of Strategy
               </span>
             </div>
