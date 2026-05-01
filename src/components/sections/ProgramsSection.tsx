@@ -21,7 +21,7 @@ const ProgramsSection = () => {
           </h2>
         </div>
 
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col justify-center items-center gap-6">
           <p className="text-black font-normal text-xl text-center">
             We help businesses rethink strategy, optimize execution, and dominate competitive landscapes using
             data-driven insights and practical systems.Cut through noise. Define exactly where you win and why.Turn
