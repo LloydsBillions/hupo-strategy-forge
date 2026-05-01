@@ -8,29 +8,32 @@ const LeadMagnetSection = () => {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  useEffect(() => {
-    const handleMessage = (event: MessageEvent) => {
-      try {
-        const data = event.data;
-
-        if (typeof data === "string" && data.includes("zf_form_")) {
-          setIsSubmitted(true);
-        }
-      } catch (e) {}
-    };
-
-    window.addEventListener("message", handleMessage);
-
-    return () => {
-      window.removeEventListener("message", handleMessage);
-    };
-  }, []);
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // optional: send email somewhere OR just trigger Zoho iframe flow
-    setIsSubmitted(true);
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbxb5G2_PWfFYVPsKCh5dQFWwtyU4BzAuQid9-CxR_4nEgsYHTzqgPB8y8TSG-J4Yow_/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+          }),
+        },
+      );
+
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
+
+      setIsSubmitted(true);
+      setEmail("");
+    } catch (error) {
+      console.error("Submission failed:", error);
+    }
   };
 
   return (
