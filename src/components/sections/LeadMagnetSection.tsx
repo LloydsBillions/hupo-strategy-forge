@@ -8,13 +8,22 @@ const LeadMagnetSection = () => {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setIsSubmitted(true);
-      // Here you would integrate with your email service
-    }
-  };
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      try {
+        const data = event.data;
+
+        // Zoho success signal usually contains "formSubmit" or height change after submit
+        if (typeof data === "string" && data.includes("zf_form_")) {
+          setIsSubmitted(true);
+        }
+      } catch (e) {}
+    };
+
+    window.addEventListener("message", handleMessage);
+
+    return () => window.removeEventListener("message", handleMessage);
+  }, []);
 
   return (
     <section ref={ref} className="bg-primary py-24 md:py-32 relative overflow-hidden">
@@ -25,24 +34,24 @@ const LeadMagnetSection = () => {
       <div className="container-wide relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           {/* Header */}
-          <h2 
-            className={`font-display text-3xl md:text-4xl lg:text-display-md font-bold text-primary-foreground mb-6 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          <h2
+            className={`font-display text-3xl md:text-4xl lg:text-display-md font-bold text-primary-foreground mb-6 transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
           >
             Diagnose Your Strategic Thinking Capability
           </h2>
 
-          <p 
-            className={`text-lg md:text-xl text-primary-foreground/90 mb-10 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-            style={{ transitionDelay: '100ms' }}
+          <p
+            className={`text-lg md:text-xl text-primary-foreground/90 mb-10 transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+            style={{ transitionDelay: "100ms" }}
           >
-            Take our 15-question assessment and discover your strengths and 
-            blind spots across strategic thinking, decision-making, and execution.
+            Take our 15-question assessment and discover your strengths and blind spots across strategic thinking,
+            decision-making, and execution.
           </p>
 
           {/* Form */}
-          <div 
-            className={`transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-            style={{ transitionDelay: '200ms' }}
+          <div
+            className={`transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+            style={{ transitionDelay: "200ms" }}
           >
             {!isSubmitted ? (
               <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
@@ -54,27 +63,35 @@ const LeadMagnetSection = () => {
                   className="flex-1 bg-obsidian text-white px-5 py-4 text-lg placeholder:text-steel focus:outline-none focus:ring-2 focus:ring-white"
                   required
                 />
-                <Button 
-                  type="submit" 
-                  variant="dark" 
-                  size="lg" 
-                  className="group whitespace-nowrap"
-                >
+
+                <Button type="submit" variant="dark" size="lg" className="group whitespace-nowrap">
                   Assess Now
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </form>
             ) : (
-              <div className="flex items-center justify-center gap-3 bg-obsidian text-white px-6 py-4">
-                <CheckCircle2 className="w-6 h-6 text-primary" />
-                <span className="text-lg">Check your inbox for the assessment link!</span>
+              <div className="flex flex-col items-center gap-5">
+                {/* success confirmation */}
+                <div className="flex items-center justify-center gap-3 bg-obsidian text-white px-6 py-4">
+                  <CheckCircle2 className="w-6 h-6 text-primary" />
+                  <span className="text-lg">Registration successful</span>
+                </div>
+
+                {/* primary CTA */}
+                <a href="/assessment">
+                  <Button variant="dark" size="lg" className="group">
+                    Take Assessment
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </a>
+
+                {/* optional secondary hint */}
+                <p className="text-steel text-sm text-center">A confirmation email has been sent to your inbox.</p>
               </div>
             )}
 
             {/* Trust Line */}
-            <p className="text-sm text-primary-foreground/70 mt-6">
-              Join 500+ leaders gaining strategic clarity
-            </p>
+            <p className="text-sm text-primary-foreground/70 mt-6">Join 500+ leaders gaining strategic clarity</p>
           </div>
         </div>
       </div>
