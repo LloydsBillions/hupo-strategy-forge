@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useInView } from "@/hooks/useInView";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, ArrowRight } from "lucide-react";
 
 const LeadMagnetSection = () => {
   const { ref, isInView } = useInView({ threshold: 0.2 });
@@ -55,7 +54,7 @@ const LeadMagnetSection = () => {
             style={{ transitionDelay: "200ms" }}
           >
             {!isSubmitted ? (
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+              <form onSubmit={handleMessage} className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
                 <input
                   type="email"
                   value={email}
