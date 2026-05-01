@@ -27,6 +27,10 @@ const ProgramsSection = () => {
             strategy into repeatable processes that scale. “If your strategy is average, your results will be
             predictable.”
           </p>
+
+          <Button asChild variant="hero" size="default" className="hidden md:inline-flex">
+            <Link to="/programs">Explore Our Programs</Link>
+          </Button>
         </div>
       </div>
     </section>
