@@ -9,7 +9,7 @@ const LeadMagnetSection = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
-    const handleMessage = (event: MessageEvent) => {
+    const handleSubmit = (event: MessageEvent) => {
       try {
         const data = event.data;
 
@@ -54,7 +54,7 @@ const LeadMagnetSection = () => {
             style={{ transitionDelay: "200ms" }}
           >
             {!isSubmitted ? (
-              <form onSubmit={handleMessage} className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
                 <input
                   type="email"
                   value={email}
