@@ -21,7 +21,7 @@ const ProgramsSection = () => {
         </div>
 
         <div className="flex flex-col gap-6">
-          <p className="text-black font-normal text-xl">
+          <p className="text-black font-normal text-xl text-center">
             We help businesses rethink strategy, optimize execution, and dominate competitive landscapes using
             data-driven insights and practical systems.Cut through noise. Define exactly where you win and why.Turn
             strategy into repeatable processes that scale. “If your strategy is average, your results will be
