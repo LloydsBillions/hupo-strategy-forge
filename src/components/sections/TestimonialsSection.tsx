@@ -86,26 +86,6 @@ const TestimonialsSection = () => {
             </blockquote>
 
             {/* Attribution */}
-            <div className={`transition-opacity duration-500 ${isAnimating ? "opacity-0" : "opacity-100"}`}>
-              <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-                <div>
-                  <div className="text-white font-bold text-lg mb-1">{current.name}</div>
-                  <div className="text-steel">
-                    {current.role}, {current.company}
-                  </div>
-                  <div className="text-primary text-sm mt-1">{current.program}</div>
-                </div>
-
-                {/* Metrics */}
-                <div className="flex flex-wrap gap-3">
-                  {current.metrics.map((metric, idx) => (
-                    <span key={idx} className="bg-primary/20 text-primary px-3 py-1 text-sm font-bold">
-                      {metric}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Navigation */}
