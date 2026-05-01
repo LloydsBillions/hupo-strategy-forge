@@ -4,28 +4,16 @@ import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "Before Hupo, I was the bottleneck in every decision. The Strategy Execution Lab taught me to build systems that empower my team. We've cut escalations by 60% and execution speed has doubled.",
-    name: "Amaka Okonkwo",
-    role: "Chief Operating Officer",
-    company: "Financial Services Firm",
-    program: "Strategy Execution Lab, March 2026",
-    metrics: ["60% ↓ Escalations", "2x Speed", "10+ Hrs/Week Freed"],
+    quote:
+      "Before Hupo, I was the bottleneck in every decision. The Strategy Execution Lab taught me to build systems that empower my team. We've cut escalations by 60% and execution speed has doubled.",
   },
   {
-    quote: "The Strategic Thinking Lab fundamentally changed how I approach complex problems. I now see the system beneath the symptoms. My team has noticed the difference—I'm calmer, clearer, and more decisive.",
-    name: "Chidi Emeka",
-    role: "Managing Director",
-    company: "FMCG Company",
-    program: "Strategic Thinking Lab, January 2026",
-    metrics: ["3x Decision Quality", "40% Faster Problem Resolution", "Team Alignment"],
+    quote:
+      "The Strategic Thinking Lab fundamentally changed how I approach complex problems. I now see the system beneath the symptoms. My team has noticed the difference—I'm calmer, clearer, and more decisive.",
   },
   {
-    quote: "We came to Hupo struggling with execution paralysis. Twelve weeks later, we have a clear operating rhythm, empowered mid-level leaders, and a strategy that's actually being implemented.",
-    name: "Folake Adeyemi",
-    role: "Group CEO",
-    company: "Professional Services Group",
-    program: "Strategy Execution Lab, February 2026",
-    metrics: ["85% Strategy Execution Rate", "4 New Leaders Promoted", "Revenue +35%"],
+    quote:
+      "We came to Hupo struggling with execution paralysis. Twelve weeks later, we have a clear operating rhythm, empowered mid-level leaders, and a strategy that's actually being implemented.",
   },
 ];
 
@@ -70,8 +58,8 @@ const TestimonialsSection = () => {
 
       <div className="container-wide relative z-10">
         {/* Section Header */}
-        <div 
-          className={`text-center mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        <div
+          className={`text-center mb-16 transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
           <h2 className="font-display text-3xl md:text-4xl lg:text-display-md font-bold text-primary">
             Leaders Transformed
@@ -79,9 +67,9 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Testimonial Card */}
-        <div 
-          className={`max-w-4xl mx-auto transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-          style={{ transitionDelay: '150ms' }}
+        <div
+          className={`max-w-4xl mx-auto transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+          style={{ transitionDelay: "150ms" }}
         >
           <div className="relative bg-charcoal/50 border border-primary/20 p-8 md:p-12 lg:p-16">
             {/* Geometric Frame */}
@@ -91,32 +79,27 @@ const TestimonialsSection = () => {
             <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-primary" />
 
             {/* Quote */}
-            <blockquote className={`font-display text-xl md:text-2xl lg:text-3xl text-white italic leading-relaxed mb-10 transition-opacity duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
+            <blockquote
+              className={`font-display text-xl md:text-2xl lg:text-3xl text-white italic leading-relaxed mb-10 transition-opacity duration-500 ${isAnimating ? "opacity-0" : "opacity-100"}`}
+            >
               "{current.quote}"
             </blockquote>
 
             {/* Attribution */}
-            <div className={`transition-opacity duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
+            <div className={`transition-opacity duration-500 ${isAnimating ? "opacity-0" : "opacity-100"}`}>
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div>
-                  <div className="text-white font-bold text-lg mb-1">
-                    {current.name}
-                  </div>
+                  <div className="text-white font-bold text-lg mb-1">{current.name}</div>
                   <div className="text-steel">
                     {current.role}, {current.company}
                   </div>
-                  <div className="text-primary text-sm mt-1">
-                    {current.program}
-                  </div>
+                  <div className="text-primary text-sm mt-1">{current.program}</div>
                 </div>
 
                 {/* Metrics */}
                 <div className="flex flex-wrap gap-3">
                   {current.metrics.map((metric, idx) => (
-                    <span 
-                      key={idx}
-                      className="bg-primary/20 text-primary px-3 py-1 text-sm font-bold"
-                    >
+                    <span key={idx} className="bg-primary/20 text-primary px-3 py-1 text-sm font-bold">
                       {metric}
                     </span>
                   ))}
@@ -140,7 +123,7 @@ const TestimonialsSection = () => {
                 <button
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
-                  className={`w-3 h-3 transition-colors ${idx === currentIndex ? 'bg-primary' : 'bg-steel/30 hover:bg-steel'}`}
+                  className={`w-3 h-3 transition-colors ${idx === currentIndex ? "bg-primary" : "bg-steel/30 hover:bg-steel"}`}
                   aria-label={`Go to testimonial ${idx + 1}`}
                 />
               ))}
