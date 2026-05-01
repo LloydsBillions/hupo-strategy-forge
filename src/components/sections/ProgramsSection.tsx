@@ -29,9 +29,11 @@ const ProgramsSection = () => {
             predictable.”
           </p>
 
-          <Button asChild variant="hero" size="default" className="hidden md:inline-flex">
-            <Link to="/programs">Explore Our Programs</Link>
-          </Button>
+          <div>
+            <Button asChild variant="hero" size="default" className="hidden md:inline-flex ">
+              <Link to="/programs">Explore Our Programs</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
