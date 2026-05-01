@@ -68,10 +68,10 @@ const TestimonialsSection = () => {
 
         {/* Testimonial Card */}
         <div
-          className={`flex justify-center items-center max-w-4xl mx-auto transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+          className={` max-w-4xl mx-auto transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
           style={{ transitionDelay: "150ms" }}
         >
-          <div className="relative bg-charcoal/50 border border-primary/20 p-8 md:p-12 lg:p-16">
+          <div className="relative justify-center items-center bg-charcoal/50 border border-primary/20 p-8 md:p-12 lg:p-16">
             {/* Geometric Frame */}
             <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-primary" />
             <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-primary" />
