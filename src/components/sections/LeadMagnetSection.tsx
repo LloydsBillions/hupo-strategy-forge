@@ -9,11 +9,10 @@ const LeadMagnetSection = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
-    const handleSubmit = (event: MessageEvent) => {
+    const handleMessage = (event: MessageEvent) => {
       try {
         const data = event.data;
 
-        // Zoho success signal usually contains "formSubmit" or height change after submit
         if (typeof data === "string" && data.includes("zf_form_")) {
           setIsSubmitted(true);
         }
@@ -22,8 +21,17 @@ const LeadMagnetSection = () => {
 
     window.addEventListener("message", handleMessage);
 
-    return () => window.removeEventListener("message", handleMessage);
+    return () => {
+      window.removeEventListener("message", handleMessage);
+    };
   }, []);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // optional: send email somewhere OR just trigger Zoho iframe flow
+    setIsSubmitted(true);
+  };
 
   return (
     <section ref={ref} className="bg-primary py-24 md:py-32 relative overflow-hidden">
