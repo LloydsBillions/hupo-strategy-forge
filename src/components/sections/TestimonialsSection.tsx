@@ -68,7 +68,7 @@ const TestimonialsSection = () => {
 
         {/* Testimonial Card */}
         <div
-          className={`max-w-4xl mx-auto transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+          className={`flex justify-center items-center max-w-4xl mx-auto transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
           style={{ transitionDelay: "150ms" }}
         >
           <div className="relative bg-charcoal/50 border border-primary/20 p-8 md:p-12 lg:p-16">
