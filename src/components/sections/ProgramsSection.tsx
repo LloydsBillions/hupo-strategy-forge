@@ -1,6 +1,7 @@
 import { useInView } from "@/hooks/useInView";
 import { ArrowRight, Building2, User, TrendingDown, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const ProgramsSection = () => {
   const { ref, isInView } = useInView({ threshold: 0.1 });
