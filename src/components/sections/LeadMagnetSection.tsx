@@ -92,9 +92,6 @@ const LeadMagnetSection = () => {
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </a>
-
-                {/* optional secondary hint */}
-                <p className="text-steel text-sm text-center">A confirmation email has been sent to your inbox.</p>
               </div>
             )}
 
