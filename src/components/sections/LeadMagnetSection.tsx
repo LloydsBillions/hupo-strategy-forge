@@ -11,23 +11,20 @@ const LeadMagnetSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (!email.trim()) return;
+
     try {
-      const response = await fetch(
+      await fetch(
         "https://script.google.com/macros/s/AKfycbxb5G2_PWfFYVPsKCh5dQFWwtyU4BzAuQid9-CxR_4nEgsYHTzqgPB8y8TSG-J4Yow_/exec",
         {
           method: "POST",
+          mode: "no-cors",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({
-            email,
-          }),
+          body: JSON.stringify({ email }),
         },
       );
-
-      if (!response.ok) {
-        throw new Error("Submission failed");
-      }
 
       setIsSubmitted(true);
       setEmail("");
@@ -75,10 +72,10 @@ const LeadMagnetSection = () => {
                   required
                 />
 
-                <Button type="submit" variant="dark" size="lg" className="group whitespace-nowrap">
+                <button type="submit" variant="dark" size="lg" className="group whitespace-nowrap">
                   Assess Now
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                </button>
               </form>
             ) : (
               <div className="flex flex-col items-center gap-5">
