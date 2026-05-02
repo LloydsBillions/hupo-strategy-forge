@@ -5,8 +5,8 @@ const contactChannels = [
   {
     icon: Mail,
     label: "General Inquiries",
-    value: "hello@huposchool.com",
-    href: "mailto:hello@huposchool.com",
+    value: "info@hupostrategy.com",
+    href: "mailto:info@hupostrategy.com",
   },
   {
     icon: Mail,
@@ -41,12 +41,8 @@ const ContactInfoSection = () => {
           }`}
         >
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Other Ways to Reach Us
-            </h2>
-            <p className="text-muted-foreground">
-              Have a quick question? Reach out directly.
-            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">Other Ways to Reach Us</h2>
+            <p className="text-muted-foreground">Have a quick question? Reach out directly.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
