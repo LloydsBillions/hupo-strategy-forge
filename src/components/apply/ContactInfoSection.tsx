@@ -11,8 +11,8 @@ const contactChannels = [
   {
     icon: Mail,
     label: "Corporate Solutions",
-    value: "corporate@huposchool.com",
-    href: "mailto:corporate@huposchool.com",
+    value: "office@hupostrategy.com",
+    href: "mailto:office@hupostrategy.com",
   },
   {
     icon: MessageSquare,
