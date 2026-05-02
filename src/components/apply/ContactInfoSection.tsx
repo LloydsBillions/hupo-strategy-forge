@@ -17,8 +17,8 @@ const contactChannels = [
   {
     icon: MessageSquare,
     label: "Partnerships",
-    value: "partnerships@huposchool.com",
-    href: "mailto:partnerships@huposchool.com",
+    value: "Partner With Us",
+    href: "https://forms.gle/CN77cCJ8Dh33y21j6",
   },
 ];
 
