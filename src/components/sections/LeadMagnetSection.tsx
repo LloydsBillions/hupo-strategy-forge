@@ -58,56 +58,55 @@ const LeadMagnetSection = () => {
 
           {/* Form */}
           <div
-  className={`transition-all duration-700 ${
-    isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-  }`}
-  style={{ transitionDelay: "200ms" }}
->
-  {!isSubmitted ? (
-    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Enter your email"
-        className="flex-1 bg-obsidian text-white px-5 py-4 text-lg placeholder:text-steel focus:outline-none focus:ring-2 focus:ring-white"
-        required
-      />
+            className={`transition-all duration-700 ${
+              isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+            style={{ transitionDelay: "200ms" }}
+          >
+            {!isSubmitted ? (
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  className="flex-1 bg-obsidian text-white px-5 py-4 text-lg placeholder:text-steel focus:outline-none focus:ring-2 focus:ring-white"
+                  required
+                />
 
-      <button
-        type="button"
-        onClick={() =>
-          window.open(
-            "https://docs.google.com/forms/d/e/1FAIpQLSeobBRaPEVsGBN5NOOP6S-xuaqqM5ZY2KeUuX2KnkCJtPlfbg/viewform?usp=header",
-            "_blank"
-          )
-        }
-        variant="dark"
-        size="lg"
-        className="group whitespace-nowrap"
-      >
-        Access Now
-        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-      </button>
-    </form>
-  ) : (
-    <div className="flex flex-col items-center gap-5">
-      {/* success confirmation */}
-      <div className="flex items-center justify-center gap-3 bg-obsidian text-white px-6 py-4">
-        <CheckCircle2 className="w-6 h-6 text-primary" />
-        <span className="text-lg">Registration successful</span>
-      </div>
+                <button
+                  type="button"
+                  onClick={() =>
+                    window.open(
+                      "https://docs.google.com/forms/d/e/1FAIpQLSeobBRaPEVsGBN5NOOP6S-xuaqqM5ZY2KeUuX2KnkCJtPlfbg/viewform?usp=header",
+                      "_blank",
+                    )
+                  }
+                  variant="dark"
+                  size="lg"
+                  className="group whitespace-nowrap"
+                >
+                  Access Now
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </form>
+            ) : (
+              <div className="flex flex-col items-center gap-5">
+                {/* success confirmation */}
+                <div className="flex items-center justify-center gap-3 bg-obsidian text-white px-6 py-4">
+                  <CheckCircle2 className="w-6 h-6 text-primary" />
+                  <span className="text-lg">Registration successful</span>
+                </div>
 
-      {/* primary CTA */}
-      <a href="/assessment">
-        <Button variant="dark" size="lg" className="group">
-          Take Assessment
-          <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-        </Button>
-      </a>
-    </div>
-  )}
-</div>
+                {/* primary CTA */}
+                <a href="/assessment">
+                  <Button variant="dark" size="lg" className="group">
+                    Take Assessment
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </a>
+              </div>
+            )}
             {/* Trust Line */}
             <p className="text-sm text-primary-foreground/70 mt-6">Join 500+ leaders gaining strategic clarity</p>
           </div>
