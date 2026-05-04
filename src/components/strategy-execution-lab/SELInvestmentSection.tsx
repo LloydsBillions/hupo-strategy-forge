@@ -42,44 +42,21 @@ const SELInvestmentSection = () => {
 
       <div className="container-wide relative z-10">
         {/* Section header */}
-        <div className={cn(
-          "text-center mb-16 opacity-0",
-          isInView && "animate-fade-up"
-        )}>
+        <div className={cn("text-center mb-16 opacity-0", isInView && "animate-fade-up")}>
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-obsidian/70 mb-4 block">
             Investment
           </span>
-          <h2 className="text-display-lg font-display font-bold text-obsidian">
-            Investment & Engagement
-          </h2>
+          <h2 className="text-display-lg font-display font-bold text-obsidian">Investment & Engagement</h2>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Pricing card */}
-          <div className={cn(
-            "bg-white p-10 shadow-elegant opacity-0",
-            isInView && "animate-fade-up stagger-1"
-          )}>
-            <h3 className="text-2xl font-display font-bold text-foreground mb-2">
-              Program Investment
-            </h3>
-            <p className="text-muted-foreground mb-6">
-              Customized based on organization size and complexity
-            </p>
-
-            <div className="bg-warm-stone p-6 mb-8">
-              <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-                Typical Range
-              </span>
-              <div className="text-4xl font-display font-black text-foreground mt-2">
-                ₦18M – ₦30M
-              </div>
-            </div>
+          <div className={cn("bg-white p-10 shadow-elegant opacity-0", isInView && "animate-fade-up stagger-1")}>
+            <h3 className="text-2xl font-display font-bold text-foreground mb-2">Program Investment</h3>
+            <p className="text-muted-foreground mb-6">Customized based on organization size and complexity</p>
 
             <div className="mb-8">
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground mb-4">
-                What's Included
-              </h4>
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground mb-4">What's Included</h4>
               <ul className="space-y-3">
                 {included.map((item, index) => (
                   <li key={index} className="flex items-start gap-3 text-muted-foreground">
@@ -91,12 +68,8 @@ const SELInvestmentSection = () => {
             </div>
 
             <div className="p-4 bg-obsidian text-white text-center mb-8">
-              <span className="text-sm font-medium uppercase tracking-wider">
-                Pilot Pricing Available
-              </span>
-              <p className="text-sm text-white/70 mt-1">
-                Limited spots for early partners
-              </p>
+              <span className="text-sm font-medium uppercase tracking-wider">Pilot Pricing Available</span>
+              <p className="text-sm text-white/70 mt-1">Limited spots for early partners</p>
             </div>
 
             <Button variant="dark" size="xl" className="w-full group">
@@ -106,13 +79,8 @@ const SELInvestmentSection = () => {
           </div>
 
           {/* Process steps */}
-          <div className={cn(
-            "opacity-0",
-            isInView && "animate-fade-up stagger-2"
-          )}>
-            <h3 className="text-2xl font-display font-bold text-obsidian mb-8">
-              Getting Started
-            </h3>
+          <div className={cn("opacity-0", isInView && "animate-fade-up stagger-2")}>
+            <h3 className="text-2xl font-display font-bold text-obsidian mb-8">Getting Started</h3>
 
             <div className="space-y-6">
               {steps.map((step, index) => (
@@ -120,20 +88,12 @@ const SELInvestmentSection = () => {
                   key={step.number}
                   className="flex gap-6 items-start bg-white/10 p-6 hover:bg-white/20 transition-colors"
                 >
-                  <span className="text-4xl font-display font-black text-obsidian/30">
-                    {step.number}
-                  </span>
+                  <span className="text-4xl font-display font-black text-obsidian/30">{step.number}</span>
                   <div>
-                    <h4 className="text-xl font-display font-bold text-obsidian mb-2">
-                      {step.title}
-                    </h4>
-                    <p className="text-obsidian/70">
-                      {step.description}
-                    </p>
+                    <h4 className="text-xl font-display font-bold text-obsidian mb-2">{step.title}</h4>
+                    <p className="text-obsidian/70">{step.description}</p>
                   </div>
-                  {index < steps.length - 1 && (
-                    <ArrowRight className="w-5 h-5 text-obsidian/30 flex-shrink-0 mt-2" />
-                  )}
+                  {index < steps.length - 1 && <ArrowRight className="w-5 h-5 text-obsidian/30 flex-shrink-0 mt-2" />}
                 </div>
               ))}
             </div>
@@ -145,9 +105,7 @@ const SELInvestmentSection = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">Prefer to Talk First?</h4>
-                  <p className="text-sm text-white/70">
-                    Schedule a 30-minute discovery call with our team.
-                  </p>
+                  <p className="text-sm text-white/70">Schedule a 30-minute discovery call with our team.</p>
                 </div>
               </div>
               <Button variant="hero-outline" size="lg" className="w-full mt-6">
