@@ -78,9 +78,9 @@ const LeadMagnetSection = () => {
                   type="button"
                   onClick={() =>
                     window.open(
-  `https://docs.google.com/forms/d/e/1FAIpQLSeobBRaPEVsGBN5NOOP6S-xuaqqM5ZY2KeUuX2KnkCJtPlfbg/viewform?usp=pp_url&entry.XXXXXXXXXX=${encodeURIComponent(email)}`,
-  "_blank"
-);
+                      `https://docs.google.com/forms/d/e/1FAIpQLSeobBRaPEVsGBN5NOOP6S-xuaqqM5ZY2KeUuX2KnkCJtPlfbg/viewform?usp=pp_url&entry.XXXXXXXXXX=${encodeURIComponent(email)}`,
+                      "_blank",
+                    )
                   }
                   variant="dark"
                   size="lg"
