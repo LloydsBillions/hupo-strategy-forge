@@ -92,7 +92,6 @@ const LeadMagnetSection = () => {
               </form>
             ) : (
               <div className="flex flex-col items-center gap-5">
-                {/* success confirmation */}
                 <div className="flex items-center justify-center gap-3 bg-obsidian text-white px-6 py-4">
                   <CheckCircle2 className="w-6 h-6 text-primary" />
                   <span className="text-lg">Registration successful</span>
