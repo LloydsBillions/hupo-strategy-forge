@@ -74,7 +74,7 @@ const LeadMagnetSection = () => {
                   required
                 />
 
-                <button
+                <Button
                   type="button"
                   onClick={() =>
                     window.open(
@@ -88,7 +88,7 @@ const LeadMagnetSection = () => {
                 >
                   Access Now
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </Button>
               </form>
             ) : (
               <div className="flex flex-col items-center gap-5">
