@@ -76,12 +76,15 @@ const LeadMagnetSection = () => {
 
                 <Button
                   type="button"
-                  onClick={() =>
-                    window.open(
-                      `https://docs.google.com/forms/d/e/1FAIpQLSeobBRaPEVsGBN5NOOP6S-xuaqqM5ZY2KeUuX2KnkCJtPlfbg/viewform?usp=pp_url&entry.XXXXXXXXXX=${encodeURIComponent(email)}`,
-                      "_blank",
-                    )
-                  }
+                  onClick={() => {
+                    const url = `https://docs.google.com/forms/d/e/1FAIpQLSeobBRaPEVsGBN5NOOP6S-xuaqqM5ZY2KeUuX2KnkCJtPlfbg/viewform`;
+
+                    const params = new URLSearchParams({
+                      "entry.XXXXXXXXXX": email, // replace this with your real field ID
+                    });
+
+                    window.open(`${url}?${params.toString()}`, "_blank");
+                  }}
                   variant="dark"
                   size="lg"
                   className="group whitespace-nowrap"
