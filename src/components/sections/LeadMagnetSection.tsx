@@ -2,21 +2,12 @@ import { useState } from "react";
 import { useInView } from "@/hooks/useInView";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-const [showForm, setShowForm] = useState(false);
-const [isCompleted, setIsCompleted] = useState(false);
 
 const LeadMagnetSection = () => {
   const { ref, isInView } = useInView({ threshold: 0.2 });
-  const [isAccessed, setIsAccessed] = useState(false);
 
-  const handleAccess = () => {
-    const url = "https://docs.google.com/forms/d/e/1FAIpQLSeobBRaPEVsGBN5NOOP6S-xuaqqM5ZY2KeUuX2KnkCJtPlfbg/viewform";
-
-    // If you have no input anymore, just open form directly
-    window.open(url, "_blank");
-
-    setIsAccessed(true);
-  };
+  const [showForm, setShowForm] = useState(false);
+  const [isCompleted, setIsCompleted] = useState(false);
 
   return (
     <section ref={ref} className="bg-primary py-24 md:py-32 relative overflow-hidden">
