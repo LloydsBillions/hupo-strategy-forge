@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useInView } from "@/hooks/useInView";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+const [showForm, setShowForm] = useState(false);
+const [isCompleted, setIsCompleted] = useState(false);
 
 const LeadMagnetSection = () => {
   const { ref, isInView } = useInView({ threshold: 0.2 });
@@ -47,11 +49,26 @@ const LeadMagnetSection = () => {
             }`}
             style={{ transitionDelay: "200ms" }}
           >
-            {!isAccessed ? (
-              <Button type="button" onClick={handleAccess} variant="dark" size="lg" className="group">
-                Access Now
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
+            {!isCompleted ? (
+              showForm ? (
+                <div className="w-full max-w-2xl mx-auto">
+                  <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSeobBRaPEVsGBN5NOOP6S-xuaqqM5ZY2KeUuX2KnkCJtPlfbg/viewform?embedded=true"
+                    width="100%"
+                    height="600"
+                    className="bg-white rounded-lg"
+                  />
+
+                  <Button type="button" onClick={() => setIsCompleted(true)} variant="dark" size="lg" className="mt-6">
+                    I’ve Completed the Form
+                  </Button>
+                </div>
+              ) : (
+                <Button type="button" onClick={() => setShowForm(true)} variant="dark" size="lg" className="group">
+                  Access Now
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              )
             ) : (
               <div className="flex flex-col items-center gap-5">
                 <div className="flex items-center justify-center gap-3 bg-obsidian text-white px-6 py-4">
