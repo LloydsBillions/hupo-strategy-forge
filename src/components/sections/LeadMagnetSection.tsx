@@ -7,15 +7,22 @@ const LeadMagnetSection = () => {
   const { ref, isInView } = useInView({ threshold: 0.2 });
   const [isAccessed, setIsAccessed] = useState(false);
 
+  const handleAccess = () => {
+    const url = "https://docs.google.com/forms/d/e/1FAIpQLSeobBRaPEVsGBN5NOOP6S-xuaqqM5ZY2KeUuX2KnkCJtPlfbg/viewform";
+
+    // If you have no input anymore, just open form directly
+    window.open(url, "_blank");
+
+    setIsAccessed(true);
+  };
+
   return (
     <section ref={ref} className="bg-primary py-24 md:py-32 relative overflow-hidden">
-      {/* Geometric Elements */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-black/5 transform -rotate-12 -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-black/5 transform rotate-12 translate-x-1/3 translate-y-1/3" />
 
       <div className="container-wide relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          {/* Header */}
           <h2
             className={`font-display text-3xl md:text-4xl lg:text-display-md font-bold text-primary-foreground mb-6 transition-all duration-700 ${
               isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -34,7 +41,6 @@ const LeadMagnetSection = () => {
             decision-making, and execution.
           </p>
 
-          {/* CTA */}
           <div
             className={`transition-all duration-700 ${
               isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -42,7 +48,7 @@ const LeadMagnetSection = () => {
             style={{ transitionDelay: "200ms" }}
           >
             {!isAccessed ? (
-              <Button type="button" onClick={() => setIsAccessed(true)} variant="dark" size="lg" className="group">
+              <Button type="button" onClick={handleAccess} variant="dark" size="lg" className="group">
                 Access Now
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -62,7 +68,6 @@ const LeadMagnetSection = () => {
               </div>
             )}
 
-            {/* Trust Line */}
             <p className="text-sm text-primary-foreground/70 mt-6">Join 500+ leaders gaining strategic clarity</p>
           </div>
         </div>
